@@ -10,15 +10,13 @@ class MonthView extends React.Component {
 
     render() {
         const tileContent = ({date, view}) => {
-            let string;
-            
-            if (date.getDate() === 11 && date.getMonth() === 8) {
-                return <p>Test</p>;
-            } else {
-                return null;
-            }
+            let filtered = this.state.toDoList.filter((item) => {
+                return item.date.getDate() === date.getDate() && item.date.getMonth() === date.getMonth() && item.date.getYear() === date.getYear();
+            })
 
-            
+            return filtered.map((item) => {
+                return <p>{item.toDo}</p>;
+            })
         }
 
         return (

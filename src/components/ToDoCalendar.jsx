@@ -4,11 +4,18 @@ import MonthView from './MonthView';
 const ToDoCalendar = () => {
     const [toDoList, setToDoList] = useState([
         {
-            date: '21-09-2021',
+            id: 0,
+            date: new Date(2021, 8, 21),
             toDo: 'irritera erik'
         },
         {
-            date: '22-09-2021',
+            id: 1,
+            date: new Date(2021, 8, 22),
+            toDo: '???'
+        },
+        {
+            id: 2,
+            date: new Date(2021, 8, 22),
             toDo: 'profit'
         }
     ]);
