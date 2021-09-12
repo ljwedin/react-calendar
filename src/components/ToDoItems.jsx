@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const ToDoItems = (props) => {
     let newToDoList = props.toDoList;
 
@@ -10,18 +8,24 @@ const ToDoItems = (props) => {
         arr.sort(sorter);
     }
 
-    const handleCheckbox = (e) => {
-        for (let item in newToDoList) {
-            if (newToDoList[item].id === parseInt(e.target.id)) {
-                if (newToDoList[item].value) {
-                    newToDoList[item].value = false;
-                } else {
-                    newToDoList[item].value = true;
-                }
-            }
-        }
+    // const handleCheckbox = (e) => {
+    //     for (let item in newToDoList) {
+    //         if (newToDoList[item].id === parseInt(e.target.id)) {
+    //             if (newToDoList[item].value) {
+    //                 newToDoList[item].value = false;
+    //             } else {
+    //                 newToDoList[item].value = true;
+    //             }
+    //         }
+    //     }
         
-        props.setToDoList(newToDoList);
+    //     props.setToDoList(newToDoList);
+    // }
+
+    const handleCheckbox = (e) => {
+        const target = parseInt(e.target.id);
+
+        
     }
 
     sortByDate(newToDoList);
@@ -29,7 +33,6 @@ const ToDoItems = (props) => {
     return newToDoList.map((item) => {
         return (
             <div id="toDoItem" key={item.id}>
-                {/* <button onClick={testToDoListUpdate}>Test</button> */}
                 <input type="checkbox" id={item.id} onChange={handleCheckbox} />
                 <p className={item.done ? "done" : "notDone"}>{item.date.toLocaleDateString()} - {item.toDo} - {item.done.toString()}</p>
             </div>

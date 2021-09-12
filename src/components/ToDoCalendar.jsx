@@ -29,6 +29,8 @@ const ToDoCalendar = () => {
         }
     ]);
 
+    const [date, setDate] = useState(new Date());
+
     // const getLocalStorage = () => {
     //     const storedToDoList = JSON.parse(localStorage.getItem('toDoList'));
     //     setToDoList(storedToDoList);
@@ -45,7 +47,11 @@ const ToDoCalendar = () => {
     return (
         <div id="content">
             <div id="monthView">
-                <MonthView toDoList={toDoList} setToDoList={setToDoList} />
+                <MonthView
+                    toDoList={toDoList}
+                    setToDoList={setToDoList}
+                    setDate={setDate}
+                />
             </div>
         </div> 
     )
