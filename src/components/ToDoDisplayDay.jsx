@@ -8,7 +8,7 @@ const ToDoDisplayDay = (props) => {
 						<p className={item.done ? "done" : "notDone"}>{item.date.toLocaleDateString()} - {item.toDo}</p>
 					</div>
 				)}
-			)};
+			)}
 		</div>
 	);
 };
