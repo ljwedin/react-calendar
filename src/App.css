@@ -194,6 +194,12 @@ button:active {
   color: #faa815;
 }
 
+.emptyList {
+  width: 15vw;
+  margin-left: 7vw;
+  color: #272727;
+}
+
 .react-calendar {
   width: 50vw;
   max-width: 100%;

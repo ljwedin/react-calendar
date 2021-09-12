@@ -1,34 +1,39 @@
 const NewToDoItem = (props) => {
-    const date = props.date;
+	const date = props.date;
 
-    const newToDoItem = {
-        id: props.toDoList.length,
-        date: date,
-        toDo: '',
-        done: false
-    }
+	// Modell för nytt todo-item
+	const newToDoItem = {
+		id: props.toDoList.length,
+		date: date,
+		toDo: '',
+		done: false
+	};
 
-    const onChangeInputText = (e) => {
-        newToDoItem.toDo = e.target.value;
-    }
+	// Ändrar textinnehåll till user input
+	const onChangeInputText = (e) => {
+		newToDoItem.toDo = e.target.value;
+	};
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+	// Uppdaterar todolistan med nytt item
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (e.target.toDo.value) {
+			e.target.toDo.value = "";
+			props.toDoList.push(newToDoItem);
+			props.setToDoList([...props.toDoList]);
+		};
+	};
 
-        props.toDoList.push(newToDoItem);
-        props.setToDoList([...props.toDoList]);
-    }
-
-    return (
-        <div id="newToDoItem">
-            <h3>Ny sak att göra (välj datum i kalendern):</h3>
-            <p>Datum: {date.toString()}</p>
-            <form>
-                <input type="text" name="toDo" onChange={onChangeInputText} />
-                <button type="submit" id="newToDoBtn" onClick={handleSubmit}>Lägg till</button>
-            </form>
-        </div>
-    )
-}
+	return (
+		<div id="newToDoItem">
+			<h3>Ny sak att göra (välj datum i kalendern):</h3>
+			<p>Datum: {date.toLocaleDateString()}</p>
+			<form onSubmit={handleSubmit}>
+				<input type="text" name="toDo" onChange={onChangeInputText} />
+				<button type="submit" id="newToDoBtn">Lägg till</button>
+			</form>
+		</div>
+	);
+};
 
 export default NewToDoItem;
