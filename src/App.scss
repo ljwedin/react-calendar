@@ -110,7 +110,8 @@ button {
 #toDoDisplay {
   display: flex;
   flex-wrap: wrap;
-  width: 70vw;
+  width: 30vw;
+  margin-left: 5vw;
 }
 
 #toDoItem {
@@ -121,16 +122,32 @@ button {
     width: 2vw;
   }
   & p {
-    width: 68vw;
+    width: 48vw;
   }
+}
+
+#newToDoBtn {
+  margin-left: 4vw;
+  color:#272727
 }
 
 .done {
   text-decoration: line-through;
 }
 
+#calendarToDo {
+  display: flex;
+  & h2 {
+    margin-left: 7vw;
+  }
+}
+
+.toDoAmount {
+  color: #faa815;
+}
+
 .react-calendar {
-    width: 70vw;
+    width: 50vw;
     max-width: 100%;
     background: #272727;
     border: 1px solid #faa815;

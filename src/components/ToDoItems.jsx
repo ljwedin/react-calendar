@@ -23,9 +23,9 @@ const ToDoItems = (props) => {
     // }
 
     const handleCheckbox = (e) => {
-        const target = parseInt(e.target.id);
-
-        
+        let target = newToDoList.find((item) => e.target.id == item.id)
+        target.done = !target.done
+        props.setToDoList([...newToDoList]);
     }
 
     sortByDate(newToDoList);

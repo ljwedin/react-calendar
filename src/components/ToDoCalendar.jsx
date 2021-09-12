@@ -41,7 +41,7 @@ const ToDoCalendar = () => {
     // }, []);
 
     useEffect(() => {
-        console.log(toDoList)
+        console.log(date)
     });
 
     return (
@@ -50,6 +50,7 @@ const ToDoCalendar = () => {
                 <MonthView
                     toDoList={toDoList}
                     setToDoList={setToDoList}
+                    date={date}
                     setDate={setDate}
                 />
             </div>

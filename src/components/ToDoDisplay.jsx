@@ -3,7 +3,7 @@ import ToDoItems from './ToDoItems';
 const ToDoDisplay = (props) => {
     return (
         <div>
-            <p>Att-göra-lista:</p>
+            <h2>Att-göra-lista:</h2>
             <div id="toDoDisplay">
                 <ToDoItems toDoList={props.toDoList} setToDoList={props.setToDoList} />
             </div>
