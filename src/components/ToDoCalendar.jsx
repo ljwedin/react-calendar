@@ -6,17 +6,26 @@ const ToDoCalendar = () => {
         {
             id: 0,
             date: new Date(2021, 8, 21),
-            toDo: 'irritera erik'
+            toDo: 'irritera erik',
+            done: false
         },
         {
             id: 1,
             date: new Date(2021, 8, 22),
-            toDo: '???'
+            toDo: '???',
+            done: false
         },
         {
             id: 2,
             date: new Date(2021, 8, 22),
-            toDo: 'profit'
+            toDo: 'profit',
+            done: false
+        },
+        {
+            id: 3,
+            date: new Date(2021, 7, 20),
+            toDo: 'steal underpants',
+            done: false
         }
     ]);
 
