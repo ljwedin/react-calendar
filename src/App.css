@@ -141,6 +141,35 @@ button:active {
   width: 70vw;
 }
 
+#toDoDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 70vw;
+}
+
+#toDoItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+#toDoItem input {
+  width: 2vw;
+}
+
+#toDoItem p {
+  width: 68vw;
+}
+
 .done {
   text-decoration: line-through;
 }

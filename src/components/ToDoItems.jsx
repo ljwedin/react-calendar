@@ -1,7 +1,7 @@
-import ToDoSingleItem from "./ToDoSingleItem";
+import { useEffect } from "react";
 
 const ToDoItems = (props) => {
-    let toDoList = props.toDoList;
+    let newToDoList = props.toDoList;
 
     const sortByDate = (arr) => {
         const sorter = (a, b) => {
@@ -9,12 +9,30 @@ const ToDoItems = (props) => {
         }
         arr.sort(sorter);
     }
-    
-    sortByDate(toDoList);
 
-    return toDoList.map((item) => {
+    const handleCheckbox = (e) => {
+        for (let item in newToDoList) {
+            if (newToDoList[item].id === parseInt(e.target.id)) {
+                if (newToDoList[item].value) {
+                    newToDoList[item].value = false;
+                } else {
+                    newToDoList[item].value = true;
+                }
+            }
+        }
+        
+        props.setToDoList(newToDoList);
+    }
+
+    sortByDate(newToDoList);
+
+    return newToDoList.map((item) => {
         return (
-            <ToDoSingleItem item={item} />
+            <div id="toDoItem" key={item.id}>
+                {/* <button onClick={testToDoListUpdate}>Test</button> */}
+                <input type="checkbox" id={item.id} onChange={handleCheckbox} />
+                <p className={item.done ? "done" : "notDone"}>{item.date.toLocaleDateString()} - {item.toDo} - {item.done.toString()}</p>
+            </div>
         )
     })
 }

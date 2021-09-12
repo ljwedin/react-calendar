@@ -107,6 +107,24 @@ button {
     width: 70vw;
 }
 
+#toDoDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70vw;
+}
+
+#toDoItem {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  & input {
+    width: 2vw;
+  }
+  & p {
+    width: 68vw;
+  }
+}
+
 .done {
   text-decoration: line-through;
 }

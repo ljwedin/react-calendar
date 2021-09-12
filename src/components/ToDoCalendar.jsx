@@ -38,10 +38,14 @@ const ToDoCalendar = () => {
     //     getLocalStorage();
     // }, []);
 
+    useEffect(() => {
+        console.log(toDoList)
+    });
+
     return (
         <div id="content">
             <div id="monthView">
-                <MonthView toDoList={toDoList} />
+                <MonthView toDoList={toDoList} setToDoList={setToDoList} />
             </div>
         </div> 
     )
