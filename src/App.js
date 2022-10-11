@@ -1,10 +1,12 @@
+import logo from './logo.svg';
 import './App.css';
-import ToDoCalendar from './components/ToDoCalendar';
 
 function App() {
     return (
-      <ToDoCalendar />
-    )
+        <div className="">
+            <p className="text-mustard">Hej</p>
+        </div>
+    );
 }
 
 export default App;
